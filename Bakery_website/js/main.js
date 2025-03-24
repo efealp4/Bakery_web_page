@@ -1,37 +1,37 @@
-/* ====== SHOW MENU ====== */ 
-const navMenu= document.getElementById('nav-menu')
-    navClose= document.getElementById('nav-close')
-    navToggle= document.getElementById('nav-toggle')
-
+/* ====== SHOE MENU ====== */ 
+const navMenu= document.getElementById('nav-menu'),
+      navToggle= document.getElementById('nav-toggle'),
+      navClose= document.getElementById('nav-close')
+      
 /* Menu Show */ 
 if(navToggle){
     navToggle.addEventListener('click', ()=>{
         navMenu.classList.add('show-menu')
     })
+}
+
+/* Menu Hidden */ 
 if(navClose){
-    navClose.addEventListener('click', ()=>{
+    navClose.addEventListener('click', ()=> {
         navMenu.classList.remove('show-menu')
     })
 }
-}
 
-/* ====== REMOVE MENU ====== */ 
-const navLink= document.querySelectorAll('.nav__link')
+/* ====== REMOVE MENU MOBILE ====== */ 
+const navLink = document.querySelectorAll('.nav__link')
 
-const linkAction= () =>{
+const linkAction = ()=> {
     const navMenu= document.getElementById('nav-menu')
-
-    // When we click on each nav__link, we remove the show-menu class. 
+    // When we click on each nav__link, we remove the show-menu class
     navMenu.classList.remove('show-menu')
 }
-navLink.forEach(n=> n.addEventListener('click', linkAction))
+navLink.forEach(n=> n.addEventListener('click',linkAction))
 
 /* ====== ADD BLUR HEADER ====== */ 
-const blurHeader= ()=>{
+const blurHeader= ()=> {
     const header= document.getElementById('header')
-
-    this.scrollY>= 50 ? header.classList.add('blur-header') : 
-    header.classList.remove('blur-header')
+    // When the scroll is greater than 50 viewport height, add the blur-header class to the header tag
+    this.scrollY>= 50? header.classList.add('blur-header'):
+                       header.classList.remove('blur-header') 
 }
-window.addEventListener('scroll',blurHeader)
-
+window.addEventListener('scroll', blurHeader)
